@@ -1216,7 +1216,7 @@ class CoAuthors_Plus {
 
 		foreach ( $authors as $author ) {
 			printf(
-				"%s ∣ %s ∣ %s ∣ %s ∣ %s ∣ %s \n",
+				"%s ∣ %s ∣ %s ∣ %s ∣ %s ∣ <img src='%s' style='height:25px; vertical-align: middle;' /> \n",
 				esc_html( $author->ID ),
 				esc_html( $author->user_login ),
 				// Ensure that author names can contain a pipe character by replacing the pipe character with the
