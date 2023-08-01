@@ -709,7 +709,7 @@ class CoAuthors_Plus {
 				$post_type = get_post_types( array( 'exclude_from_search' => false ) );
 			}
 
-			if ( ! empty( $post_type ) && ! is_object_in_taxonomy( $post_type, $this->coauthor_taxonomy ) ) {
+			if ( ! empty( $post_type ) && array_diff( (array) $post_type, $this->supported_post_types ) ) {
 				return $join;
 			}
 
@@ -754,7 +754,7 @@ class CoAuthors_Plus {
 				$post_type = get_post_types( array( 'exclude_from_search' => false ) );
 			}
 
-			if ( ! empty( $post_type ) && ! is_object_in_taxonomy( $post_type, $this->coauthor_taxonomy ) ) {
+			if ( ! empty( $post_type ) && array_diff( (array) $post_type, $this->supported_post_types ) ) {
 				return $where;
 			}
 
@@ -859,7 +859,7 @@ class CoAuthors_Plus {
 			if ( 'any' === $post_type ) {
 				$post_type = get_post_types( array( 'exclude_from_search' => false ) );
 			}
-			if ( ! empty( $post_type ) && ! is_object_in_taxonomy( $post_type, $this->coauthor_taxonomy ) ) {
+			if ( ! empty( $post_type ) && array_diff( (array) $post_type, $this->supported_post_types ) ) {
 				return $groupby;
 			}
 
